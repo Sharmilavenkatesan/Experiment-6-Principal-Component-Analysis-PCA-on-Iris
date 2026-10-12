@@ -1,0 +1,55 @@
+AIM:
+
+Reduce 4D Iris data to 2 principal components and visualize species separation.
+
+ALGORITHM:
+
+PCA via SVD: compute components that capture maximal variance.
+
+PROGRAM:
+
+from sklearn.decomposition import PCA
+
+from sklearn.datasets import load iris
+
+import matplotlib.pyplot as pit
+
+import numpy np
+
+iris load_iris ()
+
+X iris.data; yiris.target
+
+pca PCA (n components=2)
+
+Z pca.fit transform(X)
+
+print('Explained variance ratio:',
+
+np.round(pca.explained_variance_ratio_,4))
+
+plt.scatter(Z[:,0], Z[:,1], cy, cmap 'viridis') plt.xlabel('PC1'); plt.ylabel('PC2') plt.title('PCA of Iris') plt.show()
+
+DETAILED EXPLANATION:
+
+1. Load Iris dataset.
+
+2. PCA (n_components=2) computes two principal components.
+
+3. fit transform centers data and projects onto top components.
+
+4. explained variance ratio shows how much variance each PC captures.
+
+5. Plot projected data and color by species.
+
+SAMPLE OUTPUT:
+
+Explained variance ratio: [0.9246 0.0531] (Scatter plot shows separation among species)
+
+RESULT:
+
+Students see PC1 captures most variance; PCA useful for visualization and dimensionality reduction.
+
+THEORY:
+
+PCA finds orthogonal directions of maximal variance (eigenvectors of covariance matrix).
